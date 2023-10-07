@@ -34,8 +34,33 @@
   
 ## ls
 1. **ls** with no argument
+   ```
+   [user@sahara ~]$ ls
+   lecture1
+   ```
+   * home
+   * ls show the directories and file inside the current directory. So lecture1 is currently inside home directory.
+   * no error
+     
 2. **ls** with a path to directory as an argument
+   ```
+   [user@sahara ~]$ ls lecture1/
+   Hello.class  Hello.java  messages  README
+   ```
+   * home
+   * ls with a path to a directory show the directories and file inside that directory. So the four outputs are the files or directories living inside lecture1 directory.
+   * no error
+     
 3. **ls** with a path to a file as an argument
+   ```
+   [user@sahara ~]$ ls lecture1/messages/en-us.txt
+   lecture1/messages/en-us.txt
+   [user@sahara ~]$ ls lecture1/Hello.class 
+   lecture1/Hello.class
+   ```
+   * home
+   * ls with a path to a file show the path to the file and do nothing since there are no file inside the file.
+   * no error
 
 ## cat
 1. **cat** with no argument
