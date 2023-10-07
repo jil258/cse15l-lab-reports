@@ -30,7 +30,7 @@
    ```
    * home
    * cd with a path to en-us.txt file result in error
-   * the error occurs since cd is shorten from change directory while en-us.txt is a file and not a directory.
+   * The error occurs since cd is shorten from change directory while en-us.txt is a file and not a directory.
   
 ## ls
 1. **ls** with no argument
@@ -64,5 +64,29 @@
 
 ## cat
 1. **cat** with no argument
+   ```
+   [user@sahara ~]$ cat
+   lecture1/messages/en-us.txt
+   lecture1/messages/en-us.txt
+   ```
+   * home
+   * When using cat command without any arguments, it reads from the standard input (keyboard) and displays the output to the standard output.
+   * no error
+     
 2. **cat** with a path to directory as an argument
+   ```
+   [user@sahara ~]$ cat lecture1/
+   cat: lecture1/: Is a directory
+   ```
+   * home
+   * cat is not meant to display the contents of a directory,
+   * Error: Attempt to use cat on a directory will result in an error since cat is meant to display contents of a file and not directory.
+     
 3. **cat** with a path to a file as an argument
+   ```
+   [user@sahara ~]$ cat lecture1/messages/en-us.txt 
+   Hello World!
+   ```
+   * home
+   * Using cat on a path to a file prints out the contents within the file.
+   * no error
