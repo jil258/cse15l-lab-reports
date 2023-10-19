@@ -1,6 +1,6 @@
 # Lab Report 2
 
-Code for StringServer
+**Code for StringServer**
 ```
 import java.io.IOException;
 import java.net.URI;
