@@ -39,3 +39,5 @@ class StringServer {
     }
 }
 ```
+![S1](lab2-s1)
+![S2](lab2-s2)
