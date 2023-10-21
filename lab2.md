@@ -40,4 +40,6 @@ class StringServer {
 }
 ```
 ![S1](lab2-s1.png)
+- handleRequest method is being called and the if statement (url.getPath().contains("/add-message")) 
+
 ![S2](lab2-s2.png)
