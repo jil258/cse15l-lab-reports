@@ -56,6 +56,7 @@ When the `/add-message` endpoint is called with a query parameter like `?s=Hello
 - `handleRequest(URI url)`: This method is called with a `URI` object representing the new URI("http://localhost:4000/add-message?s=Hello").
 
 #### Arguments and Values:
+- getQuery() split the s=Hello into parameter[0] = s and parameter[1] = `"Hello"`
 - `url`: A `URI` object representing the URL `"http://localhost:4000/add-message?s=Hello"`.
 - `num`: Initially 1
 - `info`: Initially ""
@@ -70,6 +71,7 @@ When the `/add-message` endpoint is called with a query parameter like `?s=Hello
 The second call to `/add-message?s=How%20are%20you`, will have the same method called describe above but different URI object.
 
 #### Initial Values and Parameters
+- getQuery() split the s=Hello into parameter[0] = s and parameter[1] = `"How%20are%20you"`
 - `url`: A `URI` object representing the URL `"http://localhost:4000/add-message?s=How%20are%20you"`.
 - `num`: 2
 - `info`: "1. Hello\n"
