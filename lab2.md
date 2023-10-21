@@ -1,5 +1,6 @@
-# Lab Report 2
+#Lab Report 2
 
+##Part1
 **Code for StringServer**
 ```
 import java.io.IOException;
@@ -40,6 +41,38 @@ class StringServer {
 }
 ```
 ![S1](lab2-s1.png)
-- handleRequest method is being called and the if statement (url.getPath().contains("/add-message")) 
+#### `handleRequest` Method
+Method handles incoming HTTP requests based on the path of the URI.
+
+- If the path is `/`, it returns `"String Server Running"`.
+- If the path contains `/add-message`, it processes the query parameters to add a message to the `info` field and returns the updated messages.
+- For any other path, it returns `"404 Not Found!"`.
+
+### Usage and Field Changes with /add-message
+
+When the `/add-message` endpoint is called with a query parameter like `?s=Hello`:
+
+#### Method Calls:
+- `handleRequest(URI url)`: This method is called with a `URI` object representing the new URI("http://localhost:4000/add-message?s=Hello").
+
+#### Arguments and Values:
+- `url`: A `URI` object representing the URL `"http://localhost:4000/add-message?s=Hello"`.
+- `num`: Initially 1
+- `info`: Initially ""
+
+#### Field Changes:
+- `info`: This field will concatenate the current value of `num`, the received message, and a newline character. If the initial value was "" and `num` was 1, it becomes `"1. Hello\n"`.
+- `num`: This field increments by 1.
+
 
 ![S2](lab2-s2.png)
+The second call to `/add-message?s=How%20are%20you`, will have the same method called describe above but different URI object.
+
+- `url`: A `URI` object representing the URL `"http://localhost:4000/add-message?s=How%20are%20you"`.
+- `num`: 2
+- `info`: "1. Hello\n"
+  
+#### Field Changes:
+- `info`: Concatenates `"2. How are you\n"` to the existing messages, becoming `"1. Hello\n2. How are you\n"`.
+- `num`: Increments to 3.
+
