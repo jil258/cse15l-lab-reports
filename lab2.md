@@ -186,3 +186,7 @@ ieng6-203   11:05:01   4  11.71,  11.89,  12.19
  
 Sat Oct 21, 2023 11:09am - Prepping cs15lfa23
 ```
+
+## Part 3
+
+I didn’t know that we could directly access a remote server via the terminal and interactively make changes on the server in real-time. I also thought that creating a server using a Java file was incredibly cool, as I have only used Node.js for backend tasks.
