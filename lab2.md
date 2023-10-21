@@ -1,6 +1,6 @@
-#Lab Report 2
+# Lab Report 2
 
-##Part1
+## Part1
 **Code for StringServer**
 ```
 import java.io.IOException;
@@ -78,3 +78,111 @@ The second call to `/add-message?s=How%20are%20you`, will have the same method c
 - `info`: Concatenates `"2. How are you\n"` to the existing messages, becoming `"1. Hello\n2. How are you\n"`.
 - `num`: Increments to 3.
 
+
+##  Part2
+
+### Private key
+```
+> ls ~/.ssh/id_ed25519.pub
+/Users/lijianpeng/.ssh/id_ed25519.pub
+```
+
+### Public key
+```
+[cs15lfa23rs@ieng6-203]:~:34$ ls ~/.ssh/authorized_keys 
+/home/linux/ieng6/cs15lfa23/cs15lfa23rs/.ssh/authorized_keys
+```
+
+### log into ieng6
+```
+> ssh cs15lfa23rs@ieng6.ucsd.edu
+Last login: Wed Oct 11 17:20:41 2023 from tower-us8.prod.edstem.org
+============================ NOTICE =================================
+Authorized use of this system is limited to password-authenticated
+usernames which are issued to individuals and are for the sole use of
+the person to whom they are issued.
+
+Privacy notice: be aware that computer files, electronic mail and 
+accounts are not private in an absolute sense.  You are responsible
+for adhering to the ETS Acceptable Use Policies, which you can review at:
+https://blink.ucsd.edu/faculty/instruction/tech-guide/policies/ets-acceptable-use-policies.html
+=====================================================================
+
+*** Problems, Suggestions, or Feedback ***
+    
+    For help requests, please create a ticket at:
+    https://support.ucsd.edu/its 
+
+    You may also report issues, suggestions, or feedback by e-mailing root on any system:
+    mail -s "Your subject here" root
+    Type your message - Ctrl+D to send
+    
+*** Access our Linux ssh terminals or remote desktops via a web browser at: ***
+    https://linuxcloud.ucsd.edu
+
+    All accounts must be enrolled in Duo for access. No VPN required.
+
+
+-------------------------------------------------------
+
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-19_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-10-01_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-29_2001: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-21_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-30_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-29_1601: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-30_0801: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/weekly.2023-09-03_0015: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-29_1201: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-26_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-28_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-30_1201: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-23_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-18_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-30_1601: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-09-30_2001: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/weekly.2023-09-10_0015: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/hourly.2023-10-01_0801: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-24_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-22_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-20_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-29_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-27_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/dsmlp/.snapshot/daily.2023-09-25_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-19_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-10-01_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-29_2001: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-21_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-30_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-29_1601: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-30_0801: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/weekly.2023-09-03_0015: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-29_1201: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-26_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-28_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-30_1201: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-23_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-18_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-30_1601: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-09-30_2001: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/weekly.2023-09-10_0015: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/hourly.2023-10-01_0801: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-24_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-22_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-20_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-29_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-27_0010: Stale file handle
+quota: Cannot resolve mountpoint path /home/linux/staff/.snapshot/daily.2023-09-25_0010: Stale file handle
+Hello cs15lfa23rs, you are currently logged into ieng6-203.ucsd.edu
+
+You are using 0% CPU on this system
+
+Cluster Status 
+Hostname     Time    #Users  Load  Averages  
+ieng6-201   11:05:01   1  0.01,   0.11,   0.16
+ieng6-202   11:05:01   4  0.78,   0.31,   0.23
+ieng6-203   11:05:01   4  11.71,  11.89,  12.19
+
+ 
+Sat Oct 21, 2023 11:09am - Prepping cs15lfa23
+```
