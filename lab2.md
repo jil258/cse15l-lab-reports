@@ -66,8 +66,10 @@ When the `/add-message` endpoint is called with a query parameter like `?s=Hello
 
 
 ![S2](lab2-s2.png)
+#### Second Call Method
 The second call to `/add-message?s=How%20are%20you`, will have the same method called describe above but different URI object.
 
+#### Initial Values and Parameters
 - `url`: A `URI` object representing the URL `"http://localhost:4000/add-message?s=How%20are%20you"`.
 - `num`: 2
 - `info`: "1. Hello\n"
