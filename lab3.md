@@ -103,7 +103,7 @@ In this example, grep will search for the word "error" in server-logs.txt within
 **My Summary from Chatgpt output:** \
 The -i option allows grep to perform case-insensitive searches. It's useful when the case of the text is unknown or it is a mix of uppercase and lowercase letters.
 
-Example 1: Search for the word "network" regardless of case \
+Example 1: Search for the word "introduction" regardless of case \
 ```
 > grep -i "IntroductIOn" .techincal/biomed/1468-6708-3-1.txt
         Introduction
@@ -159,7 +159,7 @@ etc
 grep -r "admin" ./technical/
 This command searches for the string "admin" in all files within the ./technical directory and its subdirectories.
 
-Example 2: Recursively search for "problem" in .conf files \
+Example 2: Recursively search for "problem" in all txt files within biomed \
 ```
  ~/docsearch | main ?11  grep -r "problem" ./technical/biomed/*.txt          
 ./technical/biomed/gb-2001-2-12-research0055.txt:        intensity values are meaningless and problematic because
@@ -199,7 +199,7 @@ grep -v "success" ./technical/911report/*.txt
 ./technical/911report/preface.txt:            Thomas H. Kean, chair
 ./technical/911report/preface.txt:            Lee H. Hamilton, vice chair
 ```
-This command will output all lines from the file r911report/*.txt that do not contain the word "success".
+This command will output all lines from the file 911report/*.txt that do not contain the word "success".
 
 Example 2: Exclude lines with "deprecated" from search results \
 ```
