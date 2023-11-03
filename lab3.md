@@ -86,8 +86,8 @@ static List<String> filter(List<String> list, StringChecker sc) {
 grep command is what I choose since it is powerful when searching text using patterns. I have discover the below example through online search and combining the command on the used of the file in that we used in this week's lab.
 
 #### Option 1: -i (Ignore case)
-**Source ChatGPT, Prompt: pleas give a example of -i along with grep can be used during file search.** 
-Output from ChatGPT: 
+**Source ChatGPT, Prompt: pleas give a example of -i along with grep can be used during file search.** \
+Output from ChatGPT: \
 Option: -i (Ignore case)
 The -i option in grep enables case-insensitive searching, which means it ignores the case of both the search pattern and the text in the file.
 
@@ -100,7 +100,7 @@ Copy code
 grep -i "error" ./technical/server-logs.txt
 In this example, grep will search for the word "error" in server-logs.txt within the ./technical directory, matching lines with "error", "Error", "ERROR", or any other combination of case.
 
-**My Summary from Chatgpt output**
+**My Summary from Chatgpt output:** \
 The -i option allows grep to perform case-insensitive searches. It's useful when the case of the text is unknown or it is a mix of uppercase and lowercase letters.
 
 Example 1: Search for the word "network" regardless of case
@@ -112,11 +112,11 @@ bash
 Copy code
 grep -i "error" ./technical/*.log
 This searches for the word "error" in all .log files under the ./technical directory, ignoring case.
-
-
-
-#### Option 2: -r (Recursive)
-**Source ChatGPT, Prompt: pleas give a example of how to use -r along with grep to perform a recursive file search.** 
+\
+\
+\
+#### Option 2: -r (Recursive) \
+**Source ChatGPT, Prompt: pleas give a example of how to use -r along with grep to perform a recursive file search.** \
 Output from ChatGPT: 
 Option: -r (Recursive)
 The -r (or --recursive) option allows grep to perform a recursive search. This means it will search through all directories and subdirectories starting from the given path.
@@ -132,7 +132,7 @@ In this example, grep will recursively search for the string "config" starting f
 
 Source: ChatGPT, Prompt: "please give an example of how to use -r along with grep to perform a recursive file search."
 
-**My Summary from Chatgpt output**
+**My Summary from Chatgpt output** \
 The -r option allows grep to search recursively through directories, which means it will also search through all the subdirectories and their files.
 
 Example 1: Recursively search for "admin" in all files
@@ -142,11 +142,11 @@ This command searches for the string "admin" in all files within the ./technical
 Example 2: Recursively search for "timeout" in .conf files
 grep -r "timeout" ./technical/*.conf
 Even though the *.conf pattern is used, with the -r flag, grep will search for "timeout" in all .conf files in the directory and subdirectories.
-
-
-
+\
+\
+\
 #### Option 3: -v (Invert match)
-**Source ChatGPT, Prompt: pleas give a example of how to use -v along with grep to do a file search.** 
+**Source ChatGPT, Prompt: pleas give a example of how to use -v along with grep to do a file search.** \
 Output from ChatGPT: 
 Option: -v (Invert match)
 The -v option inverts the match for the grep command, causing it to display lines that do not contain the specified pattern.
@@ -160,7 +160,7 @@ Copy code
 grep -v "passed" ./technical/test-results.log
 In this example, grep searches through the file test-results.log in the ./technical directory. Instead of showing lines that contain the word "passed", it will show all lines that do not have the word "passed". This could be used to quickly find failed tests if the word "passed" is only used for successful test cases.
 
-**My Summary from Chatgpt output**
+**My Summary from Chatgpt output** \
 The -v option inverts the match, showing only the lines that do not match the given pattern. It's useful when you want to exclude certain lines.
 
 Example 1: Show lines that do not contain "success"
@@ -170,18 +170,18 @@ This command will output all lines from the file results-summary.txt that do not
 Example 2: Exclude lines with "deprecated" from search results
 grep -v "deprecated" ./technical/upgrade-notes.md
 This command filters out lines containing the term "deprecated" from the file upgrade-notes.md.
-
-
-
+\
+\
+\
 #### Option 4: --color (Color match)
-**Source ChatGPT, Prompt: pleas give a example of how to use --color along with grep and what color match is doing.**
+**Source ChatGPT, Prompt: pleas give a example of how to use --color along with grep and what color match is doing.** \
 Output from ChatGPT: 
 Option: --color
 The --color option with the grep command highlights the matching text in the terminal. This feature enhances readability by making it easier to identify the matches at a glance.
 What --color Does
 When you use --color with grep, the matched text is displayed in a different color (usually red) in the terminal output. This colorization helps in quickly locating the strings that match the pattern within the sea of text.
 
-**My Summary from Chatgpt output**
+**My Summary from Chatgpt output** \
 The --color option highlights the matching text. This can be extremely useful when I want to visually locate the matches quickly.
 
 Example 1: Color-highlight "fail" in output
