@@ -1,89 +1,98 @@
 # Lab Report 3
 
-## Part1 List Methods
-### A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
-```
-List<String> inputList = Arrays.asList("apple", "banana", "cherry");
-List<String> filteredList = ListExamples.filter(inputList, sc);
-        List<String> expectedList = Arrays.asList("apple", "banana");
-        assertEquals(expectedList, filteredList);
+## Part1 ArrayExamples reverseInPlace Method 
+We want the method to changes the input array to be in reversed order
 
-testFilter(ListTests)
-java.lang.AssertionError: expected:<[apple, banana]> but was:<[banana, apple]>
-        at org.junit.Assert.fail(Assert.java:89)
-        at org.junit.Assert.failNotEquals(Assert.java:835)
-        at org.junit.Assert.assertEquals(Assert.java:120)
-        at org.junit.Assert.assertEquals(Assert.java:146)
-        at ListTests.testFilter(ListTests.java:20)
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+**A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)** 
+
+One of the failure-inducing input in this case can be 
+```
+// input = {1, 2, 3} // Output: [3, 2, 3]
+
+@Test
+  public void testReverseInPlace_FailureCase() {
+      int[] input = {1, 2, 3};
+      ArrayExamples.reverseInPlace(input);
+      assertArrayEquals(new int[]{3, 2, 1}, input);
+  }
 ```
 
 ### An input that doesn’t induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown)
 ```
-List<String> inputList2 = Arrays.asList();
-        List<String> filteredList2 = ListExamples.filter(inputList2, sc);
-        List<String> expectedList2 = Arrays.asList();
-        assertEquals(expectedList2, filteredList2);
+// input = {1} // Output: [1]
 
-JUnit version 4.13.2
-.
-Time: 0.003
-
-OK (1 test)
+@Test
+public void testReverseInPlace_SingleElement() {
+    int[] input = {1};
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{1}, input);
+}
 ```
 
 
 ### The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)
 
-The filter is intended to returns a new list that has all the elements of the input list for which the StringChecker returns true, and not the elements that return false, in
-**the same order they appeared in the input list**. However the actual functionality do the StringChecker and add to the list in **Reverse order**.
-
-The code produce expected output on a empty list and on a list with single element but can failed on a longer lists.
+The symptom reveals a flaw in the logic of the loop within the reverseInPlace method. Where it only works on a array with one element and not on those with one element and above. It indicates that the method is not iterating and swapping elements as intended for arrays with multiple elements. \
 ```
-testFilter(ListTests)
-java.lang.AssertionError: expected:<[apple, banana]> but was:<[banana, apple]>
+bash-3.2$ bash test.sh
+JUnit version 4.13.2
+.E.
+Time: 0.005
+There was 1 failure:
+1) testReverseInPlace_FailureCase(ArrayTests)
+arrays first differed at element [2]; expected:<1> but was:<3>
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:78)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
+        at org.junit.Assert.internalArrayEquals(Assert.java:534)
+        at org.junit.Assert.assertArrayEquals(Assert.java:418)
+        at org.junit.Assert.assertArrayEquals(Assert.java:429)
+        at ArrayTests.testReverseInPlace_FailureCase(ArrayTests.java:16)
+        ... 30 trimmed
+Caused by: java.lang.AssertionError: expected:<1> but was:<3>
         at org.junit.Assert.fail(Assert.java:89)
         at org.junit.Assert.failNotEquals(Assert.java:835)
         at org.junit.Assert.assertEquals(Assert.java:120)
         at org.junit.Assert.assertEquals(Assert.java:146)
-        at ListTests.testFilter(ListTests.java:20)
+        at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria.java:8)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:76)
+        ... 36 more
 
-JUnit version 4.13.2
-.
-Time: 0.003
-
-OK (1 test)
+FAILURES!!!
+Tests run: 2,  Failures: 1
 ```
 
 ### The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
 
-The fix made the adding to the end of the list instead of pushing from the front.
+The original implementation incorrectly tries to reverse the array by iterating over its entire length, which results in swapping the elements back to their original positions in arrays with more than one element. The fixed version correctly iterates only up to the midpoint of the array, swapping each element with its corresponding element from the other end. This approach ensures that each element is moved to its correct reversed position without being swapped back.
+
 ```
 // Before:
-static List<String> filter(List<String> list, StringChecker sc) {
-    List<String> result = new ArrayList<>();
-    for(String s: list) {
-      if(sc.checkString(s)) {
-        result.add(0, s);
-      }
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
     }
-    return result;
-  }
+}
 
 // After:
-static List<String> filter(List<String> list, StringChecker sc) {
-    List<String> result = new ArrayList<>();
-    for(String s: list) {
-      if(sc.checkString(s)) {
-        result.add(s);
-      }
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length / 2; i += 1) {
+      int temp = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = temp;
     }
-    return result;
-  }
+}
 ```
 
 ## Part 2 - Researching Commands
 
-grep command is what I choose since it is powerful when searching text using patterns. I have discover the below example through online search ChatGPT and using the man grep command on a Linux system, and combining the command on the used of the files structure that we used in this week's lab.
+```grep``` command is what I choose since it is powerful when searching text using patterns. I have discover the below example through online search ChatGPT and using the man grep command on a Linux system, and combining the command on the used of the files structure that we used in this week's lab.
 
 #### Option 1: -i (Ignore case)
 **Source ChatGPT, Prompt: pleas give a example of -i along with grep can be used during file search.** \
