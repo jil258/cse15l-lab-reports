@@ -48,17 +48,17 @@ Tests run: 2,  Failures: 1
 
 ### Steps 7 - Edit the code file to fix the failing test
 
-typing vim ListExamples.java <enter> to run vim for text editing
+typing vim ListExamples.java ``<enter>`` to run vim for text editing
 ```
 [cs15lfa23rs@ieng6-203]:lab7:77$ vim ListExamples.java
 ```
 
-Keys pressed: /index1 <enter>, n n n n n n n n n <right><right><right><right><right> x i 2 <esc> :wq \
-The / is a search command in vim following by the texts we are searching which is index1 and n navigate through the occurences of the words, right tab 5 times get us to the 1 and x delete the 1. We enter insert mode with i and add 2 to the index and used <esc> to exit insert mode. Lastly with :wq we save and exit the vim.
+Keys pressed: /index1 ``<enter>``, n n n n n n n n n ``<right><right><right><right><right>`` x i 2 ``<esc>`` :wq \
+The / is a search command in vim following by the texts we are searching which is index1 and n navigate through the occurences of the words, right tab 5 times get us to the 1 and x delete the 1. We enter insert mode with i and add 2 to the index and used ``<esc>`` to exit insert mode. Lastly with :wq we save and exit the vim.
 
 ### Steps 8 - Run the tests, demonstrating that they now succeed
 
-Keys pressed: <up><up><enter> The bash test.sh is two commands up in the search history, so I used up arrow to access it. 
+Keys pressed: ``<up><up><enter>`` The bash test.sh is two commands up in the search history, so I used up arrow to access it. 
 ```
 [cs15lfa23rs@ieng6-203]:lab7:78$ bash test.sh 
 JUnit version 4.13.2
