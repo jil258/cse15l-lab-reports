@@ -53,9 +53,8 @@ typing vim ListExamples.java <enter> to run vim for text editing
 [cs15lfa23rs@ieng6-203]:lab7:77$ vim ListExamples.java
 ```
 
-Keys pressed: /index1 <enter>, n n n n n n n n n <right><right><right><right><right> x i 2 <esc> :wq
-The Keys pressed search for the index1 and n navigate through the occurences, right tab 5 times get us to the 1 and x delete the 1.
-we enter insert mode with i and add 2 to the index and used <esc> to exit insert mode. Lastly with :wq we save and exit the vim.
+Keys pressed: /index1 <enter>, n n n n n n n n n <right><right><right><right><right> x i 2 <esc> :wq \
+The / is a search command in vim following by the texts we are searching which is index1 and n navigate through the occurences of the words, right tab 5 times get us to the 1 and x delete the 1. We enter insert mode with i and add 2 to the index and used <esc> to exit insert mode. Lastly with :wq we save and exit the vim.
 
 ### Steps 8 - Run the tests, demonstrating that they now succeed
 
