@@ -2,6 +2,7 @@
 Create the following directory structure within the /home/student/ directory (the default directory the terminal starts in):
 
 ```
+cd step1
 mkdir source lib data
 touch source/Main.java lib/Library.java
 cd data
