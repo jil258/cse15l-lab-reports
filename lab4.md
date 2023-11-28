@@ -54,7 +54,7 @@ ListExamplesTests commands that compiles and runs the test file called ListExamp
 
 ### Steps 7 - Edit the code file to fix the failing test
 
-Key pressed: type ```vim ListExamples.java``` + ``<enter>`` to run vim for text editing
+Key pressed: type ```vim ListExamples.java``` + ``<Enter>`` to run vim for text editing
 ```
 [cs15lfa23rs@ieng6-203]:lab7:77$ vim ListExamples.java
 ```
@@ -64,15 +64,15 @@ Key pressed: type ```vim ListExamples.java``` + ``<enter>`` to run vim for text 
 from the lab I already know the bug is at line 44 so I typed ```:44``` + ```<Enter>```
 <img width="588" alt="Screenshot 2023-11-28 at 1 21 37 PM" src="https://github.com/jil258/cse15l-lab-reports/assets/102570197/19d1a363-65a1-4b72-9ec1-27a138291fbf">
 
-It will jump to line 44 then by hitting the right 6 times ```<right><right><right><right><right><right>```. Hit I to enter insert mode. Hit ```<BackSpace>``` to delete 1 and hit 2 to fix the bug. Then hit ESC to exit the insert mode and go back to normal mode.
+It will jump to line 44 then by hitting the right 6 times ```<right><right><right><right><right><right>```. Hit ```i``` to enter insert mode. Hit ```<BackSpace>``` to delete 1 and hit 2 to fix the bug. Then hit ```ESC``` to exit the insert mode and go back to normal mode.
 
 <img width="507" alt="Screenshot 2023-11-28 at 1 24 08 PM" src="https://github.com/jil258/cse15l-lab-reports/assets/102570197/fa830428-8f47-41c7-ac9f-df19f1996fec">
 
-After fixing type :wq + ```<Enter>``` to save and exit
+After fixing type ```:wq``` + ```<Enter>``` to save and exit
 
 ### Steps 8 - Run the tests, demonstrating that they now succeed
 
-Keys pressed: ```bash test.sh``` + ```<enter>``` The bash test.sh is two commands up in the search history, so I used up arrow to access it. 
+Keys pressed: ```bash test.sh``` + ```<Enter>``` to run the test.
 ```
 [cs15lfa23rs@ieng6-203]:lab7:78$ bash test.sh 
 JUnit version 4.13.2
@@ -83,9 +83,9 @@ OK (2 tests)
 ```
 
 ### Steps 9
-Key Pressed: In here, I first add the changes to the git by ```git add .``` and then use the
-command ```git commit -m "fix bug"``` to commit the file. Option -m allows us to type the message inside the
-terminal. And I used ```git push``` to successfully push our changes to the git and Github repository in my account
+Key Pressed: In here, I first add the changes to the git by ```git add .``` + ```<Enter>``` and then use the
+command ```git commit -m "fix bug"``` + ```<Enter>``` to commit the file. Option -m allows us to type the message inside the
+terminal. And I used ```git push``` + ```<Enter>``` to successfully push our changes to the git and Github repository in my account
 ```
 [cs15lfa23rs@ieng6-202]:lab7:109$ git add .
 [cs15lfa23rs@ieng6-202]:lab7:110$ 
