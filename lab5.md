@@ -77,7 +77,8 @@ ListExamples.java: Contains the merge method.
 test.sh: Bash script to compile and run tests.
 
 **Contents of Each File Before Fixing the Bug:**
-- ListTest.java 
+- ListTest.java
+  
 ```
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -134,6 +135,7 @@ class ListExamples {
 ```
 
 - test.sh
+  
 ```
 #!/bin/bash
 set -e
