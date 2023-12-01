@@ -1,4 +1,4 @@
-### Debugging Scenario: Java Code with Merge Method
+### Part 1: Debugging Scenario: Java Code with Merge Method
 
 #### Title: Java merge Method Causing OutOfMemoryError
 
@@ -153,3 +153,6 @@ This correction will ensure that both lists are iterated through properly in the
 This scenario showcases a complex bug involving infinite loops in Java, demonstrating the importance of careful loop condition handling and the use of debugging statements for problem resolution.
 
 
+### Part 2: Reflection
+
+I want to discuss our Week 8 lab, which I found particularly interesting due to the use of jdb for debugging programs. In the past, when fixing bugs, I had to read through lines of code to spot any logical errors, without knowing the output at each step. However, with jdb, we can check internal outputs at various steps. Additionally, the Vim editor was both cool and confusing. I am accustomed to using a mouse in programming interfaces, but Vim operates differently, requiring the memorization of numerous commands. Despite its downsides, being able to use Vim is impressive, especially when working on a remote server where file access is limited; in these situations, Vim becomes extremely useful.
